@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div class="navigation">
+            <h2>MyBlogPage</h2>
+              <ul class="unOrdered">
+                <li class="list"><a href="contact.html">Contact</a></li>
+                <li class="list" ><a href="about.html">About</a></li>
+                  <li class="list"><a href="home.html">Products</a></li>
+                  
+                 
+              </ul>
+          </div>
+    <main class="kartice">
+        <div class="card1" v-for='card in cards'>
+            <img v-bind:src='card.imgSrc' alt="dsdss"  class="jeans">
+            <h2>{{card.title}}</h2>
+            
+            <button class="button dugme" @click="showModal = true"><b>INFO</b></button>
+        </div>
+       
+        
+        <div class="card2" v-for='card in cards2' >
+            <img v-bind:src='card.imgSrc' alt="dsdss" class="jeans" >
+            <h2>{{card.title}}</h2>
+           
+            <button class="button dugme"  @click="showModal2 = true"><b>INFO</b></button>
+        </div>
+
+        <div class="card3" v-for='card in cards3'>
+            <img v-bind:src='card.imgSrc' alt="dsdss" class="jeans" >
+            <h2>{{card.title}}</h2>
+            
+            <button class="button dugme" @click="showModal3 = true"><b>INFO</b></button>
+        </div>
+
+            <div class="card4" v-for='card in cards4'>
+                <img v-bind:src='card.imgSrc' alt="dsdss" class="jeans">
+                <h2>{{card.title}}</h2>
+               
+                <button class="button dugme" @click="showModal4 = true"><b>INFO</b></button>
+            </div>
+        
+    </main>
+      
+        <div  id="noviModal" class="modal" v-if="showModal">
+            <div class="modal-content" v-for='modal in modals' >
+                <h1>{{modal.title}}</h1>
+                <p>{{modal.desc}}</p>
+                <button class="button ugasi" @click='showModal = false'>Cancel</button>
+            </div>
+          
+        </div>
+        <div  id="noviModal" class="modal" v-if="showModal2">
+            <div class="modal-content" v-for='modal in modals2' >
+                <h1>{{modal.title}}</h1>
+              <p>{{modal.desc}}</p>
+                <button class="button ugasi" @click='showModal2 = false'>Cancel</button>
+            </div>
+          
+        </div>
+        <div  id="noviModal" class="modal" v-if="showModal3">
+            <div class="modal-content" v-for='modal in modals3'>
+                <h1>{{modal.title}}</h1>
+               <p>{{modal.desc}}</p>
+                <button class="button ugasi" @click='showModal3 = false'>Cancel</button>
+            </div>
+            
+        </div>
+        <div id="noviModal" class="modal" v-if="showModal4">
+            <div class="modal-content" v-for='modal in modals4'>
+                <h1>{{modal.title}}</h1>
+               <p>{{modal.desc}}</p>
+                <button class="button ugasi" @click='showModal4 = false'>Cancel</button>
+            </div>
+           
+        </div>
+       
+        <footer>
+                   
+            <p class="foot"> MyBlogPage <br>
+                Phone: +1 (701) 231-2323 / Fax: (323) 213-1232 <br>
+                Campus address: 100111 <br>
+                Physical/delivery address: 1340 Administration Ave., Fargo, ND 58102 <br>
+                Mailing address: NDSU Dept. 1000111111 / PO Box 6050 / Fargo, ND 58108-6050 <br>
+                Page manager: Contact MyBlogPage</p> 
+        </footer>
+    </div>
+  
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="modal.js"></script>
+    
+</body>
+</html>
